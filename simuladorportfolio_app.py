@@ -54,18 +54,24 @@ def build_main(tickers, precos, aporte_inicial, data_inicio, data_fim):
         aporte_inicial = float(aporte_inicial)
         resultado = (retorno_porcentagem["Portfólio"] * aporte_inicial) + aporte_inicial
         diferenca = resultado - aporte_inicial
-        resultado = "{:,.2f}".format(round(resultado, 2))
-        aporte_inicial = "{:,.2f}".format(round(aporte_inicial, 2))
-        diferenca = "{:,.2f}".format(round(diferenca, 2))
         data_inicial_formatada = data_inicio.strftime("%d/%m/%Y")
         data_final_formatada = data_fim.strftime("%d/%m/%Y")
         if resultado > aporte_inicial:
+            resultado = "{:,.2f}".format(round(resultado, 2))
+            aporte_inicial = "{:,.2f}".format(round(aporte_inicial, 2))
+            diferenca = "{:,.2f}".format(round(diferenca, 2))
             st.write(f"Parabéns pela sua simulação de carteira de investimentos! Com base no aporte inicial de R\${aporte_inicial} realizado de {data_inicial_formatada} até {data_final_formatada} seu resultado foi R\${resultado}, com ganho de R\${diferenca}")
             st.write("---")
         elif resultado < aporte_inicial:
+            resultado = "{:,.2f}".format(round(resultado, 2))
+            aporte_inicial = "{:,.2f}".format(round(aporte_inicial, 2))
+            diferenca = "{:,.2f}".format(round(diferenca, 2))
             st.write(f"Parabéns pela sua simulação de carteira de investimentos! Com base no aporte inicial de R\${aporte_inicial} realizado de {data_inicial_formatada} até {data_final_formatada} seu resultado foi R\${resultado}, com perda de R\${diferenca[1:]}")
             st.write("---")
         else:
+            resultado = "{:,.2f}".format(round(resultado, 2))
+            aporte_inicial = "{:,.2f}".format(round(aporte_inicial, 2))
+            diferenca = "{:,.2f}".format(round(diferenca, 2))
             st.write(f"Parabéns pela sua simulação de carteira de investimentos! Com base no aporte inicial de R\${aporte_inicial} realizado de {data_inicial_formatada} até {data_final_formatada} seu resultado foi R\${resultado}, sem ganhos.")
             st.write("---")
 
